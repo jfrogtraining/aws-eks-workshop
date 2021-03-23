@@ -7,13 +7,13 @@ resources:
       branches:
         include: master
   - name: workshop_build_info
-    type: BuildInfo
+    type: Buildinfo
     configuration:
       sourceArtifactory: Artifactory
       buildName: workshop_build
       buildNumber: ${run_number}
-  - name: promoted_workshop_build_Info
-    type: BuildInfo
+  - name: promoted_workshop_build_info
+    type: Buildinfo
     configuration:
       sourceArtifactory: Artifactory
       buildName: workshop_build
@@ -50,14 +50,14 @@ pipelines:
         type: DockerPush
         configuration:
           targetRepository: workshop-docker
-          autoPublishBuildInfo: true
+          autoPublishBuildinfo: true
           forceXrayScan: true
           integrations:
             - name:  Artifactory
           inputSteps:
             - name: docker_build
           outputResources:
-            - name: workshop_build_Info
+            - name: workshop_build_info
       - name: docker_promote
         type: PromoteBuild
         configuration:
@@ -67,7 +67,7 @@ pipelines:
           comment:               Artifact passed Xray Scan
           copy:                  false
           inputResources:
-            - name:    workshop_build_Info
+            - name:    workshop_build_info
               trigger: false
           outputResources:
-            - name: promoted_workshop_build_Info
+            - name: promoted_workshop_build_info
