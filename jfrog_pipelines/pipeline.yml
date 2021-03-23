@@ -21,26 +21,19 @@ resources:
 
 pipelines:
   - name: workshop_app_build
-    configuration:
-      environmentVariables:
-        readOnly:
-          Version: latest
     steps:
       - name: docker_build
         type: DockerBuild
         configuration:
           dockerFileLocation: workshop-app
           dockerFileName: Dockerfile
-          dockerImageName: ${Fullimagename}
-          dockerImageTag: ${Version}
+          dockerImageName: partnership.jfrog.io/workshop-docker/workshop-app
+          dockerImageTag: ${run_number}
           inputResources:
             - name: gitRepo
           integrations:
             - name: PartnershipArtifactory
         execution:
-          onStart:
-            - export domain=$(echo ${int_Artifactory_url} | awk -F[/:] '{print $4}' )
-            - export Fullimagename="${domain}/workshop-docker/workshop-app"
           onSuccess:
             - echo "Congrats The Docker image was built!"
       - name: docker_push
