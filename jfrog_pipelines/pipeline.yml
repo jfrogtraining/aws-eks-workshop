@@ -28,7 +28,7 @@ pipelines:
           affinityGroup: docker_build
           dockerFileLocation: workshop-app
           dockerFileName: Dockerfile
-          dockerImageName: partnership-workshop-docker.jfrog.io/workshop-docker/workshop-app
+          dockerImageName: partnership-workshop-docker.jfrog.io/workshop-app
           dockerImageTag: ${run_number}
           inputResources:
             - name: gitRepo
