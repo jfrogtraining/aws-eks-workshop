@@ -1,0 +1,73 @@
+resources:
+  - name: gitRepo
+    type: GitRepo
+    configuration:
+      path: jfrogtraining/aws-eks-workshop
+      gitProvider: jeffGitHub
+      branches:
+        include: master
+  - name: workshop_build_info
+    type: BuildInfo
+    configuration:
+      sourceArtifactory: Artifactory
+      buildName: workshop_build
+      buildNumber: ${run_number}
+  - name: promoted_workshop_build_Info
+    type: BuildInfo
+    configuration:
+      sourceArtifactory: Artifactory
+      buildName: workshop_build
+      buildNumber: ${run_number}
+
+pipelines:
+  - name: workshop_app_build
+    configuration:
+      environmentVariables:
+        readOnly:
+          Version: latest
+    steps:
+      - name: docker_build
+        type: DockerBuild
+        configuration:
+          dockerFileLocation: workshop-app
+          dockerFileName: Dockerfile
+          dockerImageName: ${Fullimagename}
+          dockerImageTag: ${Version}
+          inputResources:
+            - name: gitRepo
+          integrations:
+            - name: Artifactory
+        execution:
+          onStart:
+            - pushd ${res_gitRepo_code_resourcePath}/workshop-app
+            - mkdir -p results
+            - popd
+            - export domain=$(echo ${int_Artifactory_url} | awk -F[/:] '{print $4}' )
+            - export Fullimagename="${domain}/workshop-docker/workshop-app"
+          onSuccess:
+            - echo "Congrats The Docker image was built!"
+      - name: docker_push
+        type: DockerPush
+        configuration:
+          targetRepository: workshop-docker
+          autoPublishBuildInfo: true
+          forceXrayScan: true
+          integrations:
+            - name:  Artifactory
+          inputSteps:
+            - name: docker_build
+          outputResources:
+            - name: workshop_build_Info
+      - name: docker_promote
+        type: PromoteBuild
+        configuration:
+          targetRepository:      workshop-docker-prod-local
+          includeDependencies:   true
+          status:                Passed
+          comment:               Artifact passed Xray Scan
+          copy:                  false
+          inputResources:
+            - name:    workshop_build_Info
+              trigger: false
+          outputResources:
+            - name: promoted_workshop_build_Info
