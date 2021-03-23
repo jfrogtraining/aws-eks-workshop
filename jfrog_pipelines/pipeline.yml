@@ -69,6 +69,7 @@ pipelines:
         type: Bash
         configuration:
           integrations:
+            - name: jeffAws
             - name: jeffEksK8s
           inputResources:
             - name: gitRepo
@@ -76,6 +77,7 @@ pipelines:
             - name: docker_promote
         execution:
           onExecute:
+            - cd $res_gitRepo_resourcePath
             - pwd
             - ls
             - kubectl create namespace aws-eks-workshop
