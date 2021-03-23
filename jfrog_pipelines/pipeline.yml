@@ -3,7 +3,7 @@ resources:
     type: GitRepo
     configuration:
       path: jfrogtraining/aws-eks-workshop
-      gitProvider: jefferyfryGitHub
+      gitProvider: jefferyfryGithub
       branches:
         include: master
   - name: workshop_build_info
