@@ -53,7 +53,6 @@
  */
 
 import 'aframe';
-import 'aframe-orbit-controls';
 
 /***************************************************************************************************
  * Zone JS is required by default for Angular itself.
