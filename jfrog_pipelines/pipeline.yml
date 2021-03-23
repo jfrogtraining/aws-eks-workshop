@@ -39,9 +39,6 @@ pipelines:
             - name: Artifactory
         execution:
           onStart:
-            - pushd ${res_gitRepo_code_resourcePath}/workshop-app
-            - mkdir -p results
-            - popd
             - export domain=$(echo ${int_Artifactory_url} | awk -F[/:] '{print $4}' )
             - export Fullimagename="${domain}/workshop-docker/workshop-app"
           onSuccess:
