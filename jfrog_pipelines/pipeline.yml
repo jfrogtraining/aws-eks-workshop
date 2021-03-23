@@ -27,7 +27,7 @@ pipelines:
         configuration:
           dockerFileLocation: workshop-app
           dockerFileName: Dockerfile
-          dockerImageName: partnership.jfrog.io/workshop-docker/workshop-app
+          dockerImageName: partnership-workshop-docker.jfrog.io/workshop-docker/workshop-app
           dockerImageTag: ${run_number}
           inputResources:
             - name: gitRepo
