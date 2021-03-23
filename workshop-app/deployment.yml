@@ -27,8 +27,6 @@ metadata:
   labels:
     app:  workshop-app
   name:  workshop-app
-  annotations:
-    service.beta.kubernetes.io/aws-load-balancer-type: nlb-ip
 spec:
   type: LoadBalancer
   ports:
