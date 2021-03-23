@@ -12,12 +12,6 @@ resources:
       sourceArtifactory: PartnershipArtifactory
       buildName: workshop_build
       buildNumber: ${run_number}
-  - name: xray_workshop_build_info
-    type: Buildinfo
-    configuration:
-      sourceArtifactory: PartnershipArtifactory
-      buildName: workshop_build
-      buildNumber: ${run_number}
   - name: promoted_workshop_build_info
     type: Buildinfo
     configuration:
@@ -55,7 +49,7 @@ pipelines:
           inputSteps:
             - name: docker_build
           outputResources:
-            - name: xray_workshop_build_info
+            - name: workshop_build_info
       - name: docker_promote
         type: PromoteBuild
         configuration:
@@ -65,9 +59,9 @@ pipelines:
           comment:               Artifact passed Xray Scan
           copy:                  true
           inputSteps:
-            - name: docker_build
+            - name: docker_push
           inputResources:
-            - name:    xray_workshop_build_info
+            - name:    workshop_build_info
               trigger: true
           outputResources:
             - name: promoted_workshop_build_info
