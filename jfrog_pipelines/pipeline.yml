@@ -50,7 +50,7 @@ pipelines:
         type: DockerPush
         configuration:
           targetRepository: workshop-docker
-          autoPublishBuildinfo: true
+          autoPublishBuildInfo: true
           forceXrayScan: true
           integrations:
             - name:  Artifactory
