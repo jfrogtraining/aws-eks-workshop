@@ -35,6 +35,11 @@ pipelines:
           integrations:
             - name: PartnershipArtifactory
         execution:
+          onStart:
+            - cd $res_gitRepo_resourcePath
+            - sed "s|Num|${run_number}|g" $res_gitRepo_resourcePath/workshop-app/src/app/app.component.html > $res_gitRepo_resourcePath/workshop-app/src/app/app.component.html.update
+            - mv $res_gitRepo_resourcePath/workshop-app/src/app/app.component.html $res_gitRepo_resourcePath/workshop-app/src/app/app.component.html.orig
+            - mv $res_gitRepo_resourcePath/workshop-app/src/app/app.component.html.update $res_gitRepo_resourcePath/workshop-app/src/app/app.component.html
           onSuccess:
             - echo "Congrats The Docker image was built!"
       - name: docker_push
