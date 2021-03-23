@@ -25,6 +25,7 @@ pipelines:
       - name: docker_build
         type: DockerBuild
         configuration:
+          affinityGroup: docker_build
           dockerFileLocation: workshop-app
           dockerFileName: Dockerfile
           dockerImageName: partnership-workshop-docker.jfrog.io/workshop-docker/workshop-app
@@ -39,6 +40,7 @@ pipelines:
       - name: docker_push
         type: DockerPush
         configuration:
+          affinityGroup: docker_build
           targetRepository: workshop-docker
           autoPublishBuildInfo: true
           forceXrayScan: true
