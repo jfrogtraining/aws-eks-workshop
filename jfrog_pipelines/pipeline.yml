@@ -92,3 +92,6 @@ pipelines:
             - sed "s|imageName|partnership-workshop-docker.jfrog.io/workshop-app:${run_number}|g" workshop-app/deployment.yml > my-deployment.yaml
             - cat my-deployment.yaml
             - kubectl apply -f my-deployment.yaml --namespace aws-eks-workshop
+            - while [ -z "$url" ]; do url=$(kubectl describe service workshop-app --namespace aws-eks-workshop | grep 'LoadBalancer Ingress:' | awk '{printf "http://%s:8092",$3;}'); sleep 2; done
+            - echo "$url"
+            - echo "Workshop App launched!"
