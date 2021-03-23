@@ -12,6 +12,12 @@ resources:
       sourceArtifactory: PartnershipArtifactory
       buildName: workshop_build
       buildNumber: ${run_number}
+  - name: xray_workshop_build_info
+    type: Buildinfo
+    configuration:
+      sourceArtifactory: PartnershipArtifactory
+      buildName: workshop_build
+      buildNumber: ${run_number}
   - name: promoted_workshop_build_info
     type: Buildinfo
     configuration:
