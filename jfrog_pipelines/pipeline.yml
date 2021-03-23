@@ -68,9 +68,10 @@ pipelines:
       - name: eks_deploy
         type: Bash
         configuration:
-          affinityGroup: docker_build
           integrations:
             - name: jeffEksK8s
+          inputResources:
+            - name: gitRepo
           inputSteps:
             - name: docker_promote
         execution:
@@ -78,6 +79,6 @@ pipelines:
             - pwd
             - ls
             - kubectl create namespace aws-eks-workshop
-            - sed "s|imageName|partnership-workshop-docker.jfrog.io/workshop-app${run_number}|g" deployment.yaml > my-deployment.yaml
+            - sed "s|imageName|partnership-workshop-docker.jfrog.io/workshop-app${run_number}|g" workshop-app/deployment.yaml > my-deployment.yaml
             - cat my-deployment.yaml
             - kubectl apply -f my-deployment.yaml --namespace aws-eks-workshop
