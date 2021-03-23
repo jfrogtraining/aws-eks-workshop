@@ -3,19 +3,19 @@ resources:
     type: GitRepo
     configuration:
       path: jfrogtraining/aws-eks-workshop
-      gitProvider: jeffGitHub
+      gitProvider: jefferyfryGitHub
       branches:
         include: master
   - name: workshop_build_info
     type: Buildinfo
     configuration:
-      sourceArtifactory: Artifactory
+      sourceArtifactory: PartnershipArtifactory
       buildName: workshop_build
       buildNumber: ${run_number}
   - name: promoted_workshop_build_info
     type: Buildinfo
     configuration:
-      sourceArtifactory: Artifactory
+      sourceArtifactory: PartnershipArtifactory
       buildName: workshop_build
       buildNumber: ${run_number}
 
@@ -36,7 +36,7 @@ pipelines:
           inputResources:
             - name: gitRepo
           integrations:
-            - name: Artifactory
+            - name: PartnershipArtifactory
         execution:
           onStart:
             - export domain=$(echo ${int_Artifactory_url} | awk -F[/:] '{print $4}' )
@@ -50,7 +50,7 @@ pipelines:
           autoPublishBuildInfo: true
           forceXrayScan: true
           integrations:
-            - name:  Artifactory
+            - name:  PartnershipArtifactory
           inputSteps:
             - name: docker_build
           outputResources:
