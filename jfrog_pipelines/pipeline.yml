@@ -55,7 +55,6 @@ pipelines:
         configuration:
           affinityGroup: docker_build
           targetRepository: workshop-docker-local
-          forceXrayScan: true
           integrations:
             - name:  PartnershipArtifactory
           inputSteps:
