@@ -47,17 +47,14 @@ pipelines:
         configuration:
           affinityGroup: docker_build
           targetRepository: workshop-docker-local
-          autoPublishBuildInfo: true
-          forceXrayScan: true
           integrations:
             - name:  PartnershipArtifactory
           inputSteps:
             - name: docker_build
-          outputResources:
-            - name: workshop_build_info
       - name: publish_build_info
         type: PublishBuildInfo
         configuration:
+          forceXrayScan: true
           inputSteps:
             - name: docker_push
           outputResources:
