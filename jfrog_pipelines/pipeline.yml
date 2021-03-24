@@ -47,7 +47,6 @@ pipelines:
         configuration:
           affinityGroup: docker_build
           targetRepository: workshop-docker-local
-          autoPublishBuildInfo: true
           forceXrayScan: true
           integrations:
             - name:  PartnershipArtifactory
