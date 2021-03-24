@@ -53,6 +53,11 @@ pipelines:
             - name:  PartnershipArtifactory
           inputSteps:
             - name: docker_build
+      - name: publish_build_info
+        type: PublishBuildInfo
+        configuration:
+          inputSteps:
+            - name: docker_push
           outputResources:
             - name: workshop_build_info
       - name: docker_promote
