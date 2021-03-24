@@ -12,12 +12,6 @@ resources:
       sourceArtifactory: PartnershipArtifactory
       buildName: workshop_build
       buildNumber: ${run_number}
-  - name: promoted_workshop_build_info
-    type: Buildinfo
-    configuration:
-      sourceArtifactory: PartnershipArtifactory
-      buildName: workshop_build
-      buildNumber: ${run_number}
 
 pipelines:
   - name: workshop_app_build
@@ -47,16 +41,12 @@ pipelines:
         configuration:
           affinityGroup: docker_build
           targetRepository: workshop-docker-local
+          autoPublishBuildInfo: true
           forceXrayScan: true
           integrations:
             - name:  PartnershipArtifactory
           inputSteps:
             - name: docker_build
-      - name: publish_build_info
-        type: PublishBuildInfo
-        configuration:
-          inputSteps:
-            - name: docker_push
           outputResources:
             - name: workshop_build_info
       - name: docker_promote
@@ -73,7 +63,14 @@ pipelines:
             - name:    workshop_build_info
               trigger: true
           outputResources:
-            - name: promoted_workshop_build_info
+            - name: workshop_build_info
+      - name: publish_build_info
+        type: PublishBuildInfo
+        configuration:
+          inputSteps:
+            - name: docker_push
+          outputResources:
+            - name: workshop_build_info
       - name: eks_deploy
         type: Bash
         configuration:
