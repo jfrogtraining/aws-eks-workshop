@@ -6,6 +6,14 @@ resources:
       gitProvider: jefferyfryGithub
       branches:
         include: master
+  - name: workshop_app_image
+    type: Image
+    configuration:
+      registry: PartnershipArtifactory
+      sourceRepository: workshop-docker-local
+      imageName: partnership-workshop-docker.jfrog.io/workshop-app
+      imageTag: ${run_number}
+      autoPull: true
   - name: workshop_build_info
     type: Buildinfo
     configuration:
@@ -54,7 +62,7 @@ pipelines:
           inputSteps:
             - name: docker_build
           outputResources:
-            - name: workshop_build_info
+            - name: workshop_app_image
       - name: docker_promote
         type: PromoteBuild
         configuration:
