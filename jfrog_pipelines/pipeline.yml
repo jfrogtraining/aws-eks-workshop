@@ -70,8 +70,8 @@ pipelines:
           status:                Passed
           comment:               Artifact passed Xray Scan
           copy:                  true
-          inputSteps:
-            - name: publish_build_info
+          inputResources:
+            - name: workshop_build_info
           outputResources:
             - name: promoted_workshop_build_info
       - name: eks_deploy
