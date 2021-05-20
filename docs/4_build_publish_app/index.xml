@@ -1,10 +1,31 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Build and Publish the Workshop App on JFrog DevOps Modernization Workshop</title>
-    <link>/4_build_publish_app.html</link>
-    <description>Recent content in Build and Publish the Workshop App on JFrog DevOps Modernization Workshop</description>
+    <title>Build and Publish the App on AWS Marketplace DevOps Workshop Series: CI/CD with the JFrog Platform</title>
+    <link>https://jfrogtraining.github.io/aws-eks-workshop/4_build_publish_app.html</link>
+    <description>Recent content in Build and Publish the App on AWS Marketplace DevOps Workshop Series: CI/CD with the JFrog Platform</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-US</language><atom:link href="/4_build_publish_app/index.xml" rel="self" type="application/rss+xml" />
+    <language>en-US</language><atom:link href="https://jfrogtraining.github.io/aws-eks-workshop/4_build_publish_app/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Build and Publish the NPM Package</title>
+      <link>https://jfrogtraining.github.io/aws-eks-workshop/4_build_publish_app/41_npm.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://jfrogtraining.github.io/aws-eks-workshop/4_build_publish_app/41_npm.html</guid>
+      <description>In this section, we will focus on the NPM package of our application by validating NPM dependencies and publishing the resulting NPM package.
+As we are building our NPM package and Docker image, the JFrog CLI is collecting build info along the way. Build info is referenced by the build name and build number. Build info is all the information collected during the build which includes details about the build itself.</description>
+    </item>
+    
+    <item>
+      <title>Build and Push the Docker Image</title>
+      <link>https://jfrogtraining.github.io/aws-eks-workshop/4_build_publish_app/42_docker.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://jfrogtraining.github.io/aws-eks-workshop/4_build_publish_app/42_docker.html</guid>
+      <description>We will now build a Docker image with our NPM package and publish the image to our JFrog Artifactory repository.
+ Return to your Cloud9 terminal. Let&amp;rsquo;s create a Docker image for our NPM application. Let&amp;rsquo;s create an environment variable for our image name. Substitute your server name in the following command.  export image_name=&amp;lt;server name&amp;gt;.jfrog.io/docker-demo/npm-app:latest
+Now let&amp;rsquo;s build a docker image with the following command.  docker build -t $image_name .</description>
+    </item>
+    
   </channel>
 </rss>

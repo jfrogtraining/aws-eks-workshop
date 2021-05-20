@@ -1,11 +1,11 @@
 ---
-title: "JFrog DevOps Modernization Workshop"
+title: "AWS Marketplace DevOps Workshop Series: CI/CD with the JFrog Platform"
 chapter: true
 weight: 1
 ---
 
 ![JFrog Logo](/images/jfrog-logo.png) 
-# DevOps Modernization Workshop
+# CI/CD Pipelines with the JFrog Platform
 
 ### Welcome
 

@@ -1,94 +1,74 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>JFrog DevOps Modernization Workshop</title>
-    <link>https://jfrogtraining.github.io/aws-ecs-workshop/</link>
-    <description>Recent content on JFrog DevOps Modernization Workshop</description>
+    <title>AWS Marketplace DevOps Workshop Series: CI/CD with the JFrog Platform</title>
+    <link>https://jfrogtraining.github.io/aws-eks-workshop/</link>
+    <description>Recent content on AWS Marketplace DevOps Workshop Series: CI/CD with the JFrog Platform</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-US</language><atom:link href="https://jfrogtraining.github.io/aws-ecs-workshop/index.xml" rel="self" type="application/rss+xml" />
+    <language>en-US</language><atom:link href="https://jfrogtraining.github.io/aws-eks-workshop/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Continuous Integration and Delivery</title>
-      <link>https://jfrogtraining.github.io/aws-ecs-workshop/2_devops_cloud/21_continuous_integration_and_delivery.html</link>
+      <title>DevOps in the Cloud</title>
+      <link>https://jfrogtraining.github.io/aws-eks-workshop/1_introduction/11_devops_in_cloud.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://jfrogtraining.github.io/aws-ecs-workshop/2_devops_cloud/21_continuous_integration_and_delivery.html</guid>
+      <guid>https://jfrogtraining.github.io/aws-eks-workshop/1_introduction/11_devops_in_cloud.html</guid>
+      <description>The goal of DevOps is to allow your development teams to deliver quality software faster to your customers through continuous process improvement, leveraging the best of breed development tools and infrastructure, and utilizing software development and IT operations best practices. Your team must deliver software faster than your competitors in order to get features and fixes to your customers sooner. JFrog terms this ideal as liquid software.
+ Looking forward, as release cycles get shorter and microservices get smaller, we can imagine a world in which at any one time, our systems’ software is being updated.</description>
+    </item>
+    
+    <item>
+      <title>Continuous Integration and Delivery</title>
+      <link>https://jfrogtraining.github.io/aws-eks-workshop/1_introduction/12_continuous_integration_and_delivery.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://jfrogtraining.github.io/aws-eks-workshop/1_introduction/12_continuous_integration_and_delivery.html</guid>
       <description>Continuous integration and delivery (CI/CD) is the process for which your software components are built from code, integrated, tested, released, deployed and ultimately delivered to end-users. CI/CD pipelines are the software assembly line that orchestrates the building of your software. This CI/CD pipeline line requires infrastructure. Cloud computing has allowed this infrastructure to become dynamic and ephemeral. On cloud infrastructure, your CI/CD pipelines scale up and down to meet your software delivery demands.</description>
     </item>
     
     <item>
       <title>Binary Repository Management</title>
-      <link>https://jfrogtraining.github.io/aws-ecs-workshop/2_devops_cloud/22_binary_repository_management.html</link>
+      <link>https://jfrogtraining.github.io/aws-eks-workshop/1_introduction/13_binary_repository_management.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://jfrogtraining.github.io/aws-ecs-workshop/2_devops_cloud/22_binary_repository_management.html</guid>
+      <guid>https://jfrogtraining.github.io/aws-eks-workshop/1_introduction/13_binary_repository_management.html</guid>
       <description>A Binary Repository Manager is a software hub that simplifies the development process for different teams across an organization by helping them to collaborate on building coherent and compatible software components. It does this by centralizing the management of all the binary artifacts generated and used by the organization, thereby overcoming the incredible complexity arising from diverse binary artifact types, their position in the overall workflow and the set of dependencies between them.</description>
     </item>
     
     <item>
       <title>DevSecOps</title>
-      <link>https://jfrogtraining.github.io/aws-ecs-workshop/2_devops_cloud/23_dev_sec_ops.html</link>
+      <link>https://jfrogtraining.github.io/aws-eks-workshop/1_introduction/14_dev_sec_ops.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://jfrogtraining.github.io/aws-ecs-workshop/2_devops_cloud/23_dev_sec_ops.html</guid>
+      <guid>https://jfrogtraining.github.io/aws-eks-workshop/1_introduction/14_dev_sec_ops.html</guid>
       <description>Any security issue identified by a security scanning may be reviewed by a small security team that may lack the technical knowledge. This challenge can be reduced by shifting left to the developer and operations teams, making them also responsible for security and compliance. This moves security earlier in the software delivery process. Source code, dependency and artifact security scanning are some examples of moving security into the development process. Implementing the identification of security issues earlier in the CI/CD pipeline, as well as automating security and compliance policies in the Software Development Lifecycle (SDLC), rather than using manual processes, is crucial.</description>
     </item>
     
     <item>
       <title>JFrog Platform for DevOps in the Cloud</title>
-      <link>https://jfrogtraining.github.io/aws-ecs-workshop/2_devops_cloud/24_jfrog_platform_overview.html</link>
+      <link>https://jfrogtraining.github.io/aws-eks-workshop/1_introduction/15_jfrog_platform_overview.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://jfrogtraining.github.io/aws-ecs-workshop/2_devops_cloud/24_jfrog_platform_overview.html</guid>
+      <guid>https://jfrogtraining.github.io/aws-eks-workshop/1_introduction/15_jfrog_platform_overview.html</guid>
       <description>The JFrog Platform is designed to meet the growing needs of companies to develop and distribute software in the cloud. It provides DevOps teams with the tools needed to create, manage, secure and deploy software with ease. These tools cover everything from continuous integration and delivery (CI/CD), binary repository management, artifact maturity, security and vulnerability protection (DevSecOps), release management, analytics and distribution.
 JFrog Artifactory is an Artifact Repository Manager that fully supports software packages created by any language or technology.</description>
     </item>
     
     <item>
-      <title>Configure AWS Secrets Manager for ECS</title>
-      <link>https://jfrogtraining.github.io/aws-ecs-workshop/7_deploy_ecs/71_configure_ecs_secrets.html</link>
+      <title>Workshop Setup</title>
+      <link>https://jfrogtraining.github.io/aws-eks-workshop/1_introduction/16_workshop_next_steps.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://jfrogtraining.github.io/aws-ecs-workshop/7_deploy_ecs/71_configure_ecs_secrets.html</guid>
-      <description>In the previous sections, we set up the JFrog CLI to authenticate and publish Docker images to Artifactory. In the next sections, we will add the same Artifactory credentials to AWS Secrets Manager. We will then use an IAM Role to allow Amazon ECS to authenticate with Artifactory, pull the image and deploy it.
-Private registry authentication for ECS tasks using AWS Secrets Manager enables you to store your credentials securely and then reference them in your container definition.</description>
-    </item>
-    
-    <item>
-      <title>Configure an IAM Role for ECS</title>
-      <link>https://jfrogtraining.github.io/aws-ecs-workshop/7_deploy_ecs/72_configure_ecs_role.html</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://jfrogtraining.github.io/aws-ecs-workshop/7_deploy_ecs/72_configure_ecs_role.html</guid>
-      <description>We now have our Artifactory credentials in the AWS Secrets Manager. Next, we must create an IAM role that will allow ECS to access our Artifactory secrets and deploy our image.
-Before you can launch ECS container instances and register them into a cluster, you must create an IAM role for those container instances to use when they are launched. The Amazon ECS container agent makes calls to the Amazon ECS API on your behalf using this role.</description>
-    </item>
-    
-    <item>
-      <title>Deploy Your Image with ECS</title>
-      <link>https://jfrogtraining.github.io/aws-ecs-workshop/7_deploy_ecs/73_deploy_your_image.html</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://jfrogtraining.github.io/aws-ecs-workshop/7_deploy_ecs/73_deploy_your_image.html</guid>
-      <description>The Amazon ECS first-run wizard guides you through the process of getting started with Amazon ECS using the Fargate launch type. The wizard gives you the option of creating a cluster and launching your application. It is a great way to get started with deploying your application with Amazon ECS. We will use the wizard to deploy our NPM application Docker image from Artifactory.
- Go to the Amazon ECS console first-run wizard.</description>
-    </item>
-    
-    <item>
-      <title>View Your Application</title>
-      <link>https://jfrogtraining.github.io/aws-ecs-workshop/7_deploy_ecs/74_view_your_application.html</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://jfrogtraining.github.io/aws-ecs-workshop/7_deploy_ecs/74_view_your_application.html</guid>
-      <description>In the previous section, you deployed your image with Amazon ECS. Now let&amp;rsquo;s check it out!
- When complete, click on your deployed service, npm-app-service.  Click on the Tasks tab.  Ensure the Last status shows RUNNING before going to the next step. Click on the deploy-npm-app task. On the Details page of the task, locate the Public IP.  In your browser, go to https://&amp;lt;Public IP&amp;gt; to view your deployed web application.</description>
+      <guid>https://jfrogtraining.github.io/aws-eks-workshop/1_introduction/16_workshop_next_steps.html</guid>
+      <description>Before we get started on building, publishing and deploying our NPM application, we must set up our workshop environment. In this setup section, we will:
+ Set up our AWS account and IAM roles. Provision a Cloud9 IDE instance. Prepare our JFrog Platform instance. Install and configure the JFrog CLI. Clone our workshop GitHub repository which contains our code.  There are two tracks for completing this workshop as follows.</description>
     </item>
     
     <item>
       <title>AWS Event: Create an AWS account</title>
-      <link>https://jfrogtraining.github.io/aws-ecs-workshop/4_workshop_setup/41_aws_setup/412_aws_event_account.html</link>
+      <link>https://jfrogtraining.github.io/aws-eks-workshop/2_event_engine_setup/21_aws_event_account.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://jfrogtraining.github.io/aws-ecs-workshop/4_workshop_setup/41_aws_setup/412_aws_event_account.html</guid>
+      <guid>https://jfrogtraining.github.io/aws-eks-workshop/2_event_engine_setup/21_aws_event_account.html</guid>
       <description>Only complete this section if you are running the workshop through an AWS hosted event.
  For an AWS hosted event, you are provided with an AWS account through the AWS Event Engine service using a 12-digit hash by event staff. This is your unique access code.
 1 . Go to https://dashboard.eventengine.run/.
@@ -97,49 +77,39 @@ Before you can launch ECS container instances and register them into a cluster, 
     </item>
     
     <item>
-      <title>Self-paced: Create an AWS account</title>
-      <link>https://jfrogtraining.github.io/aws-ecs-workshop/4_workshop_setup/41_aws_setup/413_self_paced_account.html</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://jfrogtraining.github.io/aws-ecs-workshop/4_workshop_setup/41_aws_setup/413_self_paced_account.html</guid>
-      <description>Only complete this section if you are running the workshop on your own. If you are at an AWS hosted event, go to Start the workshop at an AWS event. Your account must have the ability to create new IAM roles and scope other IAM permissions.
-   If you don&amp;rsquo;t already have an AWS account with Administrator access, create one now by going to AWS Getting Started.</description>
-    </item>
-    
-    <item>
       <title>Set up your Cloud9 IDE</title>
-      <link>https://jfrogtraining.github.io/aws-ecs-workshop/4_workshop_setup/41_aws_setup/414_cloud9.html</link>
+      <link>https://jfrogtraining.github.io/aws-eks-workshop/2_event_engine_setup/22_cloud9.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://jfrogtraining.github.io/aws-ecs-workshop/4_workshop_setup/41_aws_setup/414_cloud9.html</guid>
+      <guid>https://jfrogtraining.github.io/aws-eks-workshop/2_event_engine_setup/22_cloud9.html</guid>
       <description>AWS Cloud9 is a cloud-based integrated development environment (IDE) that lets you write, run, and debug your code with just a browser. It includes a code editor, debugger, and terminal. Cloud9 comes prepackaged with essential tools for popular programming languages, including JavaScript, Python, PHP, and more, so you don’t need to install files or configure your development machine to start new projects.
  Within the AWS console, use the region drop list to select us-west-2 (Oregon).</description>
     </item>
     
     <item>
       <title>Create an IAM role for your workspace</title>
-      <link>https://jfrogtraining.github.io/aws-ecs-workshop/4_workshop_setup/41_aws_setup/415_create_role.html</link>
+      <link>https://jfrogtraining.github.io/aws-eks-workshop/2_event_engine_setup/23_create_role.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://jfrogtraining.github.io/aws-ecs-workshop/4_workshop_setup/41_aws_setup/415_create_role.html</guid>
+      <guid>https://jfrogtraining.github.io/aws-eks-workshop/2_event_engine_setup/23_create_role.html</guid>
       <description> Follow this link to create an IAM role with Administrator access. Confirm that AWS service and EC2 are selected, then click Next to view permissions. Confirm that AdministratorAccess is checked, then click Next through to Review. Enter JFrog-Workshop-Admin for the role name. Click Create Role.   </description>
     </item>
     
     <item>
       <title>Attach the IAM role to your Workspace</title>
-      <link>https://jfrogtraining.github.io/aws-ecs-workshop/4_workshop_setup/41_aws_setup/416_attach_role_workspace.html</link>
+      <link>https://jfrogtraining.github.io/aws-eks-workshop/2_event_engine_setup/24_attach_role_workspace.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://jfrogtraining.github.io/aws-ecs-workshop/4_workshop_setup/41_aws_setup/416_attach_role_workspace.html</guid>
+      <guid>https://jfrogtraining.github.io/aws-eks-workshop/2_event_engine_setup/24_attach_role_workspace.html</guid>
       <description> Follow this link to find your Cloud9 EC2 instance. Select the instance by clicking the checkbox, then choose Actions ► Security ► Modify IAM role.  Choose JFrog-Workshop-Admin from the IAM Role drop down, and click Save.   </description>
     </item>
     
     <item>
       <title>Update IAM settings for your Workspace</title>
-      <link>https://jfrogtraining.github.io/aws-ecs-workshop/4_workshop_setup/41_aws_setup/417_update_iam_settings.html</link>
+      <link>https://jfrogtraining.github.io/aws-eks-workshop/2_event_engine_setup/25_update_iam_settings.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://jfrogtraining.github.io/aws-ecs-workshop/4_workshop_setup/41_aws_setup/417_update_iam_settings.html</guid>
+      <guid>https://jfrogtraining.github.io/aws-eks-workshop/2_event_engine_setup/25_update_iam_settings.html</guid>
       <description>Return to your Cloud9 workspace and click the gear icon (in top right corner).
   Select AWS Settings.
   Turn off AWS managed temporary credentials.
@@ -149,61 +119,225 @@ Before you can launch ECS container instances and register them into a cluster, 
     </item>
     
     <item>
-      <title>Get a Free JFrog Platform Instance</title>
-      <link>https://jfrogtraining.github.io/aws-ecs-workshop/4_workshop_setup/43_jfrog_setup/431_jfrog_free.html</link>
+      <title>Download the Workshop Code</title>
+      <link>https://jfrogtraining.github.io/aws-eks-workshop/2_event_engine_setup/26_download_workshop_code.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://jfrogtraining.github.io/aws-ecs-workshop/4_workshop_setup/43_jfrog_setup/431_jfrog_free.html</guid>
-      <description>If you do not have access to a JFrog Platform instance, use the JFrog Platform Cloud Free Tier to get your own JFrog Platform instance with Artifactory and Xray.
-When signing up for the JFrog Platform Cloud Free Tier, ensure that you select AWS and the US West 2 (Oregon) region.
-  JFrog Platform Cloud Free Tier   </description>
+      <guid>https://jfrogtraining.github.io/aws-eks-workshop/2_event_engine_setup/26_download_workshop_code.html</guid>
+      <description>The workshop code is located at https://github.com/jfrogtraining/aws-eks-workshop GitHub repository. We will clone this repo locally in order to pull the required workshop files and scripts. In your Cloud9 terminal, clone this repository to your local directory with the following command.
+git clone https://github.com/jfrogtraining/aws-eks-workshop.git</description>
     </item>
     
     <item>
-      <title>Generate an API Key</title>
-      <link>https://jfrogtraining.github.io/aws-ecs-workshop/4_workshop_setup/43_jfrog_setup/432_api_key.html</link>
+      <title>Create Your EKS Cluster</title>
+      <link>https://jfrogtraining.github.io/aws-eks-workshop/2_event_engine_setup/27_create_eks_cluster.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://jfrogtraining.github.io/aws-ecs-workshop/4_workshop_setup/43_jfrog_setup/432_api_key.html</guid>
-      <description>Remember your username and API Key. We will use it again with the JFrog CLI and to set up ECS to deploy your image.
-  Go to your JFrog Platform instance at https://[server name].jfrog.io. Refer to your JFrog Free Subscription Activation email if needed. Substitute your server name.  Login to your JFrog Platform instance with your credentials.  Once logged into your JFrog Platform instance, you will be presented with the landing page.</description>
+      <guid>https://jfrogtraining.github.io/aws-eks-workshop/2_event_engine_setup/27_create_eks_cluster.html</guid>
+      <description>We will use the EKSCTL command line tool to create an Amazon Elastic Kubernetes (EKS) cluster. This powerful tool allows you to manage many aspects of your EKS cluster through simple commands. When using EKSCTL, you can still manage your cluster in the Amazon EKS dashboard in the AWS console.
+Amazon Elastic Kubernetes Service (Amazon EKS) is a managed service that you can use to run Kubernetes on AWS without needing to install, operate, and maintain your own Kubernetes control plane or nodes.</description>
     </item>
     
     <item>
-      <title>Install and Configure the JFrog CLI</title>
-      <link>https://jfrogtraining.github.io/aws-ecs-workshop/4_workshop_setup/43_jfrog_setup/433_jfrog_cli.html</link>
+      <title>Get a Free JFrog Platform Instance from AWS Marketplace</title>
+      <link>https://jfrogtraining.github.io/aws-eks-workshop/2_event_engine_setup/28_jfrog_free.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://jfrogtraining.github.io/aws-ecs-workshop/4_workshop_setup/43_jfrog_setup/433_jfrog_cli.html</guid>
-      <description>JFrog CLI is a client that provides a simple CLI interface that automates the management of JFrog products. JFrog CLI works with JFrog Artifactory, JFrog Mission Control, JFrog Bintray and JFrog Xray (through their respective REST APIs) making your scripts more efficient and reliable. You can use the JFrog CLI to assist in your builds, create artifacts, promote artifacts, trigger security scans and much more. It is powerful to that you can use in your CI/CD process and general automation.</description>
+      <guid>https://jfrogtraining.github.io/aws-eks-workshop/2_event_engine_setup/28_jfrog_free.html</guid>
+      <description>Go to https://aws.amazon.com/marketplace/pp/B085Y6HJ85?ref_=beagle&amp;amp;applicationId=AWS-Marketplace-Console and click on &amp;ldquo;Try For Free&amp;rdquo; button on the upper right hand corner .  Configure and create the contract. Ensure to select &amp;ldquo;Free Trial Option&amp;rdquo; to enable &amp;ldquo;Create Contract&amp;rdquo; button. Click on &amp;ldquo;Create Contract button&amp;rdquo;  Review and accept  Once done, click on &amp;ldquo;Setup your account&amp;rdquo;  Enter the AWS account ID, which you used in the previous steps above. Ensure to use the same AWS account ID as used above to subscribe  Enter the details.</description>
     </item>
     
     <item>
-      <title>Configure JFrog Artifactory and Xray</title>
-      <link>https://jfrogtraining.github.io/aws-ecs-workshop/4_workshop_setup/43_jfrog_setup/434_configure_jfrog.html</link>
+      <title>AWS Credit Request</title>
+      <link>https://jfrogtraining.github.io/aws-eks-workshop/2_event_engine_setup/29_request_credit.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://jfrogtraining.github.io/aws-ecs-workshop/4_workshop_setup/43_jfrog_setup/434_configure_jfrog.html</guid>
-      <description>Now that we have the JFrog CLI installed and configured, we will use it to create the Artifactory NPM and docker repositories, Xray watches and policies. We will need these when we build and publish our NPM application later. The JFrog CLI uses the the JFrog Platform REST APIs. This is another way that you can manage and monitor the JFrog Platform.
- In your Cloud9 terminal, change directory to the aws-modernization-with-jfrog directory.</description>
+      <guid>https://jfrogtraining.github.io/aws-eks-workshop/2_event_engine_setup/29_request_credit.html</guid>
+      <description>Please wait a few minutes to receive your AWS Credit Code via email. If you do not receive an email confirmation, please check your company spam filter. If you&amp;rsquo;re still having difficulty, please contact ajonsso@amazon.com.</description>
+    </item>
+    
+    <item>
+      <title>Self-paced: Create an AWS account</title>
+      <link>https://jfrogtraining.github.io/aws-eks-workshop/3_self_guided_setup/31_self_paced_account.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://jfrogtraining.github.io/aws-eks-workshop/3_self_guided_setup/31_self_paced_account.html</guid>
+      <description>Only complete this section if you are running the workshop on your own. If you are at an AWS hosted event, go to Start the workshop at an AWS event. Your account must have the ability to create new IAM roles and scope other IAM permissions.
+   If you don&amp;rsquo;t already have an AWS account with Administrator access, create one now by going to AWS Getting Started.</description>
+    </item>
+    
+    <item>
+      <title>Set up your Cloud9 IDE</title>
+      <link>https://jfrogtraining.github.io/aws-eks-workshop/3_self_guided_setup/32_cloud9.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://jfrogtraining.github.io/aws-eks-workshop/3_self_guided_setup/32_cloud9.html</guid>
+      <description>AWS Cloud9 is a cloud-based integrated development environment (IDE) that lets you write, run, and debug your code with just a browser. It includes a code editor, debugger, and terminal. Cloud9 comes prepackaged with essential tools for popular programming languages, including JavaScript, Python, PHP, and more, so you don’t need to install files or configure your development machine to start new projects.
+ Within the AWS console, use the region drop list to select us-west-2 (Oregon).</description>
+    </item>
+    
+    <item>
+      <title>Create an IAM role for your workspace</title>
+      <link>https://jfrogtraining.github.io/aws-eks-workshop/3_self_guided_setup/33_create_role.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://jfrogtraining.github.io/aws-eks-workshop/3_self_guided_setup/33_create_role.html</guid>
+      <description> Follow this link to create an IAM role with Administrator access. Confirm that AWS service and EC2 are selected, then click Next to view permissions. Confirm that AdministratorAccess is checked, then click Next through to Review. Enter JFrog-Workshop-Admin for the role name. Click Create Role.   </description>
+    </item>
+    
+    <item>
+      <title>Attach the IAM role to your Workspace</title>
+      <link>https://jfrogtraining.github.io/aws-eks-workshop/3_self_guided_setup/34_attach_role_workspace.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://jfrogtraining.github.io/aws-eks-workshop/3_self_guided_setup/34_attach_role_workspace.html</guid>
+      <description> Follow this link to find your Cloud9 EC2 instance. Select the instance by clicking the checkbox, then choose Actions ► Security ► Modify IAM role.  Choose JFrog-Workshop-Admin from the IAM Role drop down, and click Save.   </description>
+    </item>
+    
+    <item>
+      <title>Update IAM settings for your Workspace</title>
+      <link>https://jfrogtraining.github.io/aws-eks-workshop/3_self_guided_setup/35_update_iam_settings.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://jfrogtraining.github.io/aws-eks-workshop/3_self_guided_setup/35_update_iam_settings.html</guid>
+      <description>Return to your Cloud9 workspace and click the gear icon (in top right corner).
+  Select AWS Settings.
+  Turn off AWS managed temporary credentials.
+  Close the Preferences tab.   Copy and run the shell commands below in your Cloud9 terminal. These shell commands will:
+    Install jq- jq is a command-line tool for parsing JSON
+  Ensure temporary credentials aren’t already in place.</description>
+    </item>
+    
+    <item>
+      <title>Download the Workshop Code</title>
+      <link>https://jfrogtraining.github.io/aws-eks-workshop/3_self_guided_setup/36_download_workshop_code.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://jfrogtraining.github.io/aws-eks-workshop/3_self_guided_setup/36_download_workshop_code.html</guid>
+      <description>The workshop code is located at https://github.com/aws-samples/aws-modernization-with-jfrog GitHub repository. We will clone this repo locally in order to pull the required workshop files and scripts. In your Cloud9 terminal, clone this repository to your local directory with the following command.
+git clone https://github.com/aws-samples/aws-modernization-with-jfrog.git</description>
+    </item>
+    
+    <item>
+      <title>Get a Free JFrog Platform Instance from AWS Marketplace</title>
+      <link>https://jfrogtraining.github.io/aws-eks-workshop/3_self_guided_setup/37_jfrog_free.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://jfrogtraining.github.io/aws-eks-workshop/3_self_guided_setup/37_jfrog_free.html</guid>
+      <description>Go to https://aws.amazon.com/marketplace/pp/B085Y6HJ85?ref_=beagle&amp;amp;applicationId=AWS-Marketplace-Console and click on &amp;ldquo;Try For Free&amp;rdquo; button on the upper right hand corner .  Configure and create the contract. Ensure to select &amp;ldquo;Free Trial Option&amp;rdquo; to enable &amp;ldquo;Create Contract&amp;rdquo; button. Click on &amp;ldquo;Create Contract button&amp;rdquo;  Review and accept  Once done, click on &amp;ldquo;Setup your account&amp;rdquo;  Enter the AWS account ID, which you used in the previous steps above. Ensure to use the same AWS account ID as used above to subscribe  Enter the details.</description>
+    </item>
+    
+    <item>
+      <title>AWS Credit Request</title>
+      <link>https://jfrogtraining.github.io/aws-eks-workshop/3_self_guided_setup/38_request_credit.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://jfrogtraining.github.io/aws-eks-workshop/3_self_guided_setup/38_request_credit.html</guid>
+      <description>Please wait a few minutes to receive your AWS Credit Code via email. If you do not receive an email confirmation, please check your company spam filter. If you&amp;rsquo;re still having difficulty, please contact ajonsso@amazon.com.</description>
+    </item>
+    
+    <item>
+      <title>Set Up Docker Repositories</title>
+      <link>https://jfrogtraining.github.io/aws-eks-workshop/3_self_guided_setup/39_docker_repositories.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://jfrogtraining.github.io/aws-eks-workshop/3_self_guided_setup/39_docker_repositories.html</guid>
+      <description>In your JFrog Platform instance at the top right, enable the drop down menu and select Quick Setup.  On the Create Repositories dialog, choose Docker and click Next.   Next, enter workshop for the Repositories Prefix.
+  Click Create. This will create the following docker repositories:
+   workshop-docker-local workshop-docker-remote workshop-docker   Local repositories are physical, locally-managed repositories into which you can deploy artifacts. These are repositories that are local to the JFrog Artifactory instance.</description>
+    </item>
+    
+    <item>
+      <title>Build and Publish the NPM Package</title>
+      <link>https://jfrogtraining.github.io/aws-eks-workshop/4_build_publish_app/41_npm.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://jfrogtraining.github.io/aws-eks-workshop/4_build_publish_app/41_npm.html</guid>
+      <description>In this section, we will focus on the NPM package of our application by validating NPM dependencies and publishing the resulting NPM package.
+As we are building our NPM package and Docker image, the JFrog CLI is collecting build info along the way. Build info is referenced by the build name and build number. Build info is all the information collected during the build which includes details about the build itself.</description>
+    </item>
+    
+    <item>
+      <title>Build and Push the Docker Image</title>
+      <link>https://jfrogtraining.github.io/aws-eks-workshop/4_build_publish_app/42_docker.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://jfrogtraining.github.io/aws-eks-workshop/4_build_publish_app/42_docker.html</guid>
+      <description>We will now build a Docker image with our NPM package and publish the image to our JFrog Artifactory repository.
+ Return to your Cloud9 terminal. Let&amp;rsquo;s create a Docker image for our NPM application. Let&amp;rsquo;s create an environment variable for our image name. Substitute your server name in the following command.  export image_name=&amp;lt;server name&amp;gt;.jfrog.io/docker-demo/npm-app:latest
+Now let&amp;rsquo;s build a docker image with the following command.  docker build -t $image_name .</description>
+    </item>
+    
+    <item>
+      <title>Configure AWS Secrets Manager for ECS</title>
+      <link>https://jfrogtraining.github.io/aws-eks-workshop/6_deploy_eks/71_configure_ecs_secrets.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://jfrogtraining.github.io/aws-eks-workshop/6_deploy_eks/71_configure_ecs_secrets.html</guid>
+      <description>In the previous sections, we set up the JFrog CLI to authenticate and publish Docker images to Artifactory. In the next sections, we will add the same Artifactory credentials to AWS Secrets Manager. We will then use an IAM Role to allow Amazon ECS to authenticate with Artifactory, pull the image and deploy it.
+Private registry authentication for ECS tasks using AWS Secrets Manager enables you to store your credentials securely and then reference them in your container definition.</description>
+    </item>
+    
+    <item>
+      <title>Configure an IAM Role for ECS</title>
+      <link>https://jfrogtraining.github.io/aws-eks-workshop/6_deploy_eks/72_configure_ecs_role.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://jfrogtraining.github.io/aws-eks-workshop/6_deploy_eks/72_configure_ecs_role.html</guid>
+      <description>We now have our Artifactory credentials in the AWS Secrets Manager. Next, we must create an IAM role that will allow ECS to access our Artifactory secrets and deploy our image.
+Before you can launch ECS container instances and register them into a cluster, you must create an IAM role for those container instances to use when they are launched. The Amazon ECS container agent makes calls to the Amazon ECS API on your behalf using this role.</description>
+    </item>
+    
+    <item>
+      <title>Deploy Your Image with ECS</title>
+      <link>https://jfrogtraining.github.io/aws-eks-workshop/6_deploy_eks/73_deploy_your_image.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://jfrogtraining.github.io/aws-eks-workshop/6_deploy_eks/73_deploy_your_image.html</guid>
+      <description>The Amazon ECS first-run wizard guides you through the process of getting started with Amazon ECS using the Fargate launch type. The wizard gives you the option of creating a cluster and launching your application. It is a great way to get started with deploying your application with Amazon ECS. We will use the wizard to deploy our NPM application Docker image from Artifactory.
+ Go to the Amazon ECS console first-run wizard.</description>
+    </item>
+    
+    <item>
+      <title>View Your Application</title>
+      <link>https://jfrogtraining.github.io/aws-eks-workshop/6_deploy_eks/74_view_your_application.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://jfrogtraining.github.io/aws-eks-workshop/6_deploy_eks/74_view_your_application.html</guid>
+      <description>In the previous section, you deployed your image with Amazon ECS. Now let&amp;rsquo;s check it out!
+ When complete, click on your deployed service, npm-app-service.  Click on the Tasks tab.  Ensure the Last status shows RUNNING before going to the next step. Click on the deploy-npm-app task. On the Details page of the task, locate the Public IP.  In your browser, go to https://&amp;lt;Public IP&amp;gt; to view your deployed web application.</description>
+    </item>
+    
+    <item>
+      <title>Set Up Xray Security</title>
+      <link>https://jfrogtraining.github.io/aws-eks-workshop/3_self_guided_setup/310_xray_setup.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://jfrogtraining.github.io/aws-eks-workshop/3_self_guided_setup/310_xray_setup.html</guid>
+      <description>In your JFrog Platform instance, go to Administration &amp;gt; Xray &amp;gt; Watches &amp;amp; Policies.   Click Create a Policy.
+  Call the security policy, High-Severity.
+   Click on New Rule.
+  Name the rule High-Severity and select High for the Minimal Severity. Click Save.
+   Click Create to create this new security policy.
+  Click on the Watches tab under Watches &amp;amp; Policies.</description>
     </item>
     
     <item>
       <title>Cleanup</title>
-      <link>https://jfrogtraining.github.io/aws-ecs-workshop/cleanup.html</link>
+      <link>https://jfrogtraining.github.io/aws-eks-workshop/cleanup.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://jfrogtraining.github.io/aws-ecs-workshop/cleanup.html</guid>
+      <guid>https://jfrogtraining.github.io/aws-eks-workshop/cleanup.html</guid>
       <description>Your JFrog Platform Instance - The JFrog Platform instance that you used in this workshop will automatically be destroyed after the workshop. There isn&amp;rsquo;t anything you need to do. If you would like keep it, you can upgrade to one of the premium plans. Do this by clicking on the Upgrade button.   Amazon Resources
  Amazon ECS Resources - To cleanup your Amazon ECS resources, go to your npm-app-cluster in your Amazon ECS console and click Delete Cluster.</description>
     </item>
     
     <item>
       <title>Resources</title>
-      <link>https://jfrogtraining.github.io/aws-ecs-workshop/resources.html</link>
+      <link>https://jfrogtraining.github.io/aws-eks-workshop/resources.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://jfrogtraining.github.io/aws-ecs-workshop/resources.html</guid>
+      <guid>https://jfrogtraining.github.io/aws-eks-workshop/resources.html</guid>
       <description>JFrog Platform Documentation - The full documentation of the JFrog Platform, the universal, hybrid, end-to-end DevOps automation solution. It is designed to take you through all the JFrog Products. Including user, administration and developer guides, installation and upgrade procedures, system architecture and configuration, and working with the JFrog application. JFrog Academy - Learn more about the JFrog Platform at your own pace with JFrog Academy free courses taught by our experts.</description>
     </item>
     
