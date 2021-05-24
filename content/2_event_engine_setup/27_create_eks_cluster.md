@@ -12,7 +12,25 @@ Amazon Elastic Kubernetes Service (Amazon EKS) is a managed service that you can
 {{% /notice %}}
 
 1. In your Cloud9 terminal, follow these [instructions](https://docs.aws.amazon.com/eks/latest/userguide/eksctl.html) to install EKSCTL on Linux.
-2. In the **Container definition** section, click **Configure** on the **custom** option.
-3. For the container name, specify ```npm-app```.
-4. For the **Image** specify the Docker image name for our _npm-app_. This should be ```${domain}/docker-demo/npm-app:latest```. _domain_ is the JFrog Platform instance domain (_server name_.jfrog.io).
-5. Check **Private repository autentication**.
+2. Follow these [instructions](https://docs.aws.amazon.com/eks/latest/userguide/install-kubectl.html) to install KUBECTL on Linux.
+3. Next, execute the following command to create your EKS cluster. It is that easy! This will take a few minutes.
+   
+   ``
+   eksctl create cluster --name jfrogeksworkshop --region us-west-2 --managed
+   ``
+   
+4. Update your kubeconfig to add the credentials for your new cluster.
+   
+   ``
+   aws eks update-kubeconfig --name jfrogeksworkshop --region us-west-2
+   ``
+   
+5. Execute the following command to print out your kubeconfig. Copy the output to your notepad. We will need this later.
+   
+   ``
+   cat /home/ec2-user/.kube/config
+   ``
+
+   ![Kubecobnfig](/images/kubeconfig.png)
+   
+6. Check **Private repository autentication**.

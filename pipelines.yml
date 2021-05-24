@@ -1,101 +1,107 @@
 resources:
-  - name: gitRepo
+  - name: awsEksRepo
     type: GitRepo
     configuration:
-      path: jfrogtraining/aws-eks-workshop
-      gitProvider: jefferyfryGithub
+      path: {{ .Values.GitHub.path }}
+      gitProvider: {{ .Values.GitHub.gitProvider }}
       branches:
         include: master
-  - name: workshop_app_image
+  - name: app_image
     type: Image
     configuration:
-      registry: PartnershipArtifactory
-      sourceRepository: workshop-docker-local
-      imageName: partnership-workshop-docker.jfrog.io/workshop-app
+      registry: {{ .Values.Artifactory.intName }}
+      sourceRepository: {{ .Values.Artifactory.devRepo }}
+      imageName: {{ .Values.app.dockerImageName }}
       imageTag: ${run_number}
       autoPull: true
-  - name: workshop_build_info
+  - name: app_build_info
     type: Buildinfo
     configuration:
-      sourceArtifactory: PartnershipArtifactory
-      buildName: workshop_build
+      sourceArtifactory: {{ .Values.Artifactory.intName }}
+      buildName: {{ .Values.app.buildName }}
       buildNumber: ${run_number}
-  - name: promoted_workshop_build_info
+  - name: promoted_app_build_info
     type: Buildinfo
     configuration:
-      sourceArtifactory: PartnershipArtifactory
-      buildName: workshop_build
+      sourceArtifactory: {{ .Values.Artifactory.intName }}
+      buildName: {{ .Values.app.buildName }}
       buildNumber: ${run_number}
 
 pipelines:
-  - name: workshop_app_build
+  - name: eks_workshop_app_build
     steps:
-      - name: docker_build
+      - name: app_docker_build
         type: DockerBuild
         configuration:
           affinityGroup: docker_build
-          dockerFileLocation: workshop-app
+          dockerFileLocation: {{ .Values.app.dockerFileLocation }}
           dockerFileName: Dockerfile
-          dockerImageName: partnership-workshop-docker.jfrog.io/workshop-app
+          dockerImageName: {{ .Values.app.dockerImageName }}
           dockerImageTag: ${run_number}
           inputResources:
-            - name: gitRepo
+            - name: awsEksRepo
           integrations:
-            - name: PartnershipArtifactory
+            - name: {{ .Values.Artifactory.intName }}
         execution:
           onStart:
-            - cd $res_gitRepo_resourcePath
-            - sed "s|Num|${run_number}|g" $res_gitRepo_resourcePath/workshop-app/src/app/app.component.html > $res_gitRepo_resourcePath/workshop-app/src/app/app.component.html.update
-            - mv $res_gitRepo_resourcePath/workshop-app/src/app/app.component.html $res_gitRepo_resourcePath/workshop-app/src/app/app.component.html.orig
-            - mv $res_gitRepo_resourcePath/workshop-app/src/app/app.component.html.update $res_gitRepo_resourcePath/workshop-app/src/app/app.component.html
+            - cd $res_awsEksRepo_resourcePath
+            - sed "s|Num|${run_number}|g" $res_awsEksRepo_resourcePath/workshop-app/src/app/app.component.html > $res_awsEksRepo_resourcePath/workshop-app/src/app/app.component.html.update
+            - mv $res_awsEksRepo_resourcePath/workshop-app/src/app/app.component.html $res_awsEksRepo_resourcePath/workshop-app/src/app/app.component.html.orig
+            - mv $res_awsEksRepo_resourcePath/workshop-app/src/app/app.component.html.update $res_awsEksRepo_resourcePath/workshop-app/src/app/app.component.html
           onSuccess:
             - echo "Congrats The Docker image was built!"
-      - name: docker_push
+      - name: app_docker_push
         type: DockerPush
         configuration:
           affinityGroup: docker_build
           autoPublishBuildInfo: true
           forceXrayScan: true
-          targetRepository: workshop-docker-local
+          targetRepository: {{ .Values.Artifactory.devRepo }}
           integrations:
-            - name:  PartnershipArtifactory
+            - name:  {{ .Values.Artifactory.intName }}
           inputSteps:
-            - name: docker_build
+            - name: app_docker_build
           outputResources:
-            - name: workshop_app_image
-            - name: workshop_build_info
-      - name: docker_promote
+            - name: app_image
+            - name: app_build_info
+      - name: publish_build_info
+        type: PublishBuildInfo
+        configuration:
+          inputSteps:
+            - name: app_docker_push
+          outputResources:
+            - name: app_build_info
+      - name: app_promote
         type: PromoteBuild
         configuration:
-          targetRepository:      workshop-docker-prod-local
+          targetRepository:      {{ .Values.Artifactory.prodRepo }}
           includeDependencies:   true
           status:                Passed
           comment:               Artifact passed Xray Scan
           copy:                  true
           inputResources:
-            - name: workshop_build_info
+            - name: app_build_info
           outputResources:
-            - name: promoted_workshop_build_info
+            - name: promoted_app_build_info
       - name: eks_deploy
         type: Bash
         configuration:
           integrations:
-            - name: jeffAws
-            - name: jeffEksK8s
+            - name: {{ .Values.AWS.intName }}
+            - name: {{ .Values.AWS.eks }}
           inputResources:
-            - name: gitRepo
+            - name: awsEksRepo
           inputSteps:
-            - name: docker_promote
+            - name: app_promote
         execution:
           onExecute:
-            - cd $res_gitRepo_resourcePath
+            - cd $res_awsEksRepo_resourcePath
             - pwd
             - ls
             - curl -o aws-iam-authenticator https://amazon-eks.s3.us-west-2.amazonaws.com/1.19.6/2021-01-05/bin/linux/amd64/aws-iam-authenticator
             - chmod +x ./aws-iam-authenticator
             - mkdir -p $HOME/bin && cp ./aws-iam-authenticator $HOME/bin/aws-iam-authenticator && export PATH=$PATH:$HOME/bin
-            - kubectl create namespace aws-eks-workshop || true
-            - sed "s|imageName|partnership-workshop-docker.jfrog.io/workshop-app:${run_number}|g" workshop-app/deployment.yml > my-deployment.yaml
+            - sed "s|imageName|{{ .Values.app.dockerImageName }}:${run_number}|g" workshop-app/deployment.yml > my-deployment.yaml
             - cat my-deployment.yaml
             - kubectl apply -f my-deployment.yaml --namespace aws-eks-workshop
             - while [ -z "$url" ]; do url=$(kubectl describe service workshop-app --namespace aws-eks-workshop | grep 'LoadBalancer Ingress:' | awk '{printf "https://%s",$3;}'); sleep 2; done
