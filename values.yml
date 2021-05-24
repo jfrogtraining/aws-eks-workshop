@@ -6,7 +6,6 @@ Artifactory:
 GitHub:
   path: <github username>/aws-eks-workshop #change to your github username
   gitProvider: github_integration
-  creds: pull_secrets
 AWS:
   intName: aws_integration
   eks: eks_integration
